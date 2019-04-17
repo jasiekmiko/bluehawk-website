@@ -8,7 +8,7 @@ exports.onCreateNode = ({
   const {
     createNodeField
   } = actions
-  if (node.internal.type === `CardsSetsYaml`) {
+  if (node.internal.type === `CardSetsYaml`) {
     const slug = node.title
     createNodeField({
       node,
@@ -27,24 +27,23 @@ exports.createPages = ({
   } = actions
   return graphql(`
     {
-      allCardsSetsYaml {
+      allCardSetsYaml {
         edges {
           node {
             id
-            title
           }
         }
       }
     }
   `).then(result => {
-    result.data.allCardsSetsYaml.edges.forEach(({node}) => {
+    result.data.allCardSetsYaml.edges.forEach(({node}) => {
       createPage({
         path: node.id,
         component: path.resolve(`./src/templates/card-set.jsx`),
         context: {
           // Data passed to context is available
           // in page queries as GraphQL variables.
-          title: node.title,
+          id: node.id,
         },
       })
     })

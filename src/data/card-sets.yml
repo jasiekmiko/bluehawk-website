@@ -1,6 +1,9 @@
 - id: "bqc2019"
   title: "BQC 2019"
+  onSale: true
 - id: "dev2018"
   title: "Dev Cup 2018"
+  onSale: false
 - id: "bqc2018"
   title: "BQC 2018"
+  onSale: false
