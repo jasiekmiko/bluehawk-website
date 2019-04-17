@@ -1,9 +1,5 @@
 import React from "react"
-
-import {Header} from "../components/header"
 import Layout from "../components/layout"
-
-
 import SaleImage from "../images/saleimage.png"
 
 export default class extends React.Component {
